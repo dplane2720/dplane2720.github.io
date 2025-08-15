@@ -550,7 +550,6 @@ body {
   margin-left: 0.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
-  color: #0f172a; /* slate-400 */
 }
 
 .external-link-icon {
@@ -571,7 +570,6 @@ body {
 
 .resume-button:hover .button-link-icon {
   transform: translateX(4px) translateY(-4px);
-  color: inherit;
 }
 
 .experience-link:hover .external-link-icon {
