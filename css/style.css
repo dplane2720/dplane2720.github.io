@@ -289,12 +289,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  -webkit-mask-image: url("../images/icons8-resume-ios-17-glyph/icons8-resume-60.png");
+  -webkit-mask-image: url("../images/icons8-resume-60.png");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
   -webkit-mask-composite: source-in;
-  mask-image: url("../images/icons8-resume-ios-17-glyph/icons8-resume-60.png");
+  mask-image: url("../images/icons8-resume-60.png");
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
