@@ -281,6 +281,30 @@ body {
   height: 1.5rem;
 }
 
+.resume-icon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: currentColor;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-mask-image: url("../images/icons8-resume-ios-17-glyph/icons8-resume-60.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-composite: source-in;
+  mask-image: url("../images/icons8-resume-ios-17-glyph/icons8-resume-60.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  mask-composite: intersect;
+}
+
+.social-links a:hover .resume-icon {
+  background-color: #5eead4;
+}
+
 /* Main content - Scrollable */
 .main-content {
   padding-top: 1rem; /* pt-24 */
@@ -861,6 +885,11 @@ body {
 
 .footer a:hover {
   color: #2dd4bf; /* teal-400 */
+}
+
+.footer a .footer-icon {
+  vertical-align: middle;
+  margin-right: 0.375rem;
 }
 
 /* Responsive adjustments */
