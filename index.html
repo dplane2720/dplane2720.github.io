@@ -619,5 +619,38 @@ for Nonlinear System Identification</span>
     <script src="js/main.js"></script>
 
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8ac7743224844014bfe07c37fd43f644"}'></script><!-- End Cloudflare Web Analytics -->
+
+    <!-- Click event logger (Cloudflare Worker + D1) -->
+    <script>
+    (function () {
+      // Update this after `wrangler deploy` prints the worker URL:
+      var WORKER_URL = 'https://dplane-portfolio-events.dplane2720.workers.dev/log';
+
+      function classifyLink(href) {
+        if (!href) return null;
+        if (href.indexOf('Dan_Lane_Resume.pdf') !== -1) return 'resume';
+        if (href.indexOf('commons.erau.edu/edt/937') !== -1) return 'thesis';
+        if (href.indexOf('github.com/DPLane2720') !== -1) return 'github';
+        if (href.indexOf('linkedin.com/in/dplane2720') !== -1) return 'linkedin';
+        if (href.indexOf('mailto:') === 0) return 'email';
+        if (href.indexOf('DS 625') !== -1) return 'project-ds625';
+        if (href.indexOf('EE 505') !== -1) return 'project-ee505';
+        if (href.indexOf('MA 506') !== -1) return 'project-ma506';
+        if (href.indexOf('ME 595') !== -1) return 'project-me595';
+        if (href.indexOf('ME 622') !== -1) return 'project-me622';
+        return null;
+      }
+
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a');
+        if (!a) return;
+        var event = classifyLink(a.href);
+        if (!event) return;
+        try {
+          navigator.sendBeacon(WORKER_URL, JSON.stringify({ event: event }));
+        } catch (_) { /* swallow — never block navigation */ }
+      }, true);
+    })();
+    </script>
 </body>
 </html>

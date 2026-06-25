@@ -1,0 +1,8 @@
+name = "dplane-portfolio-events"
+main = "src/index.js"
+compatibility_date = "2024-12-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dplane-portfolio-events"
+database_id = "a98d905e-b38e-4a4c-9ff0-540a9b78f036"
